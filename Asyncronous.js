@@ -7,10 +7,13 @@ const delay=(t)=>{
 }
 
 const main=async()=>{
-    const url=`https://jsonplaceholder.typicode.com/users/1`
+
+    for(let i=0;i<10;i++){
+    const url=`https://jsonplaceholder.typicode.com/users/${i+1}`
    
     const result=await fetch(url)
     const data=await result.json()
-    console.log(data)
+    console.log(data.id,"------",data.name,"-----",data.email)
+    }
 }
 main()
